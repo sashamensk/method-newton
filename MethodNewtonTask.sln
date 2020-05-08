@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodNewtonTask", "MethodNewtonTask\MethodNewtonTask.csproj", "{AAB72E5A-DE7B-4E26-9E9B-C3636629B625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodNewtonTask.Tasks", "MethodNewtonTask.Tests\MethodNewtonTask.Tasks.csproj", "{E1B98DEB-4FCB-49E3-AC92-DCCD5A8AEA88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MethodNewtonTask.Tests", "MethodNewtonTask.Tests\MethodNewtonTask.Tests.csproj", "{E1B98DEB-4FCB-49E3-AC92-DCCD5A8AEA88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
