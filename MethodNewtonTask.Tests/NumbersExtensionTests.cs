@@ -2,7 +2,7 @@ using System;
 using NUnit.Framework;
 using static MethodNewtonTask.NumbersExtension;
 
-namespace MethodNewtonTask.Tasks
+namespace MethodNewtonTask.Tests
 {
     [TestFixture]
     public class NumbersExtensionTests
