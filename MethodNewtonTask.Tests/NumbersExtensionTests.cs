@@ -27,22 +27,22 @@ namespace MethodNewtonTask.Tasks
 
 
         [Test]
-        public void FindNthRoot_Number_Is_Negative_And_Degree_Is_Even_Throws_ArgumentException() =>
+        public void FindNthRoot_NumberIsNegativeAndDegreeIsEven_ThrowArgumentException() =>
             Assert.Throws<ArgumentException>(() => FindNthRoot(-0.01, 2, 0.0001),
                 "A cannot be negative when when the n degree is even.");
 
         [Test]
-        public void FindNthRoot_Degree_Is_Negative_Throw_ArgumentException() =>
+        public void FindNthRoot_DegreeIsNegative_ThrowArgumentException() =>
             Assert.Throws<ArgumentException>(() => FindNthRoot(0.001, -2, 0.0001),
                 "Degree can not be less or equal zero.");
 
         [Test]
-        public void FindNthRoot_Accuracy_Is_Negative_Throw_ArgumentException() =>
+        public void FindNthRoot_AccuracyIsNegative_ThrowArgumentException() =>
             Assert.Throws<ArgumentException>(() => FindNthRoot(0.01, 2, -1),
                 "Accuracy should be more than zero.");
 
         [Test]
-        public void FindNthRoot_Accuracy_More_Than_Epsilon_Throw_ArgumentException() =>
+        public void FindNthRoot_AccuracyMoreThanEpsilon_ThrowArgumentException() =>
             Assert.Throws<ArgumentException>(() => FindNthRoot(0.01, 2, 0.11),
                 $"Accuracy should be less than {NumbersExtension.AppSettings.Epsilon}");
     }
