@@ -22,7 +22,7 @@ namespace MethodNewtonTask.Tests
         [TestCase(9876543210, 9, 0.0001, 12.8977)]
         public void FindNthRootTests(double number, int n, double accuracy, double expected)
         {
-            NumbersExtension.AppSettings.Epsilon = accuracy;
+            NumbersExtension.AppSettings.Epsilon = accuracy + double.Epsilon;
             Assert.AreEqual(expected, FindNthRoot(number, n, accuracy), accuracy);
         }
 
