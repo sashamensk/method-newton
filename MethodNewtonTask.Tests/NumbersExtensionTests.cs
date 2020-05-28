@@ -42,7 +42,7 @@ namespace MethodNewtonTask.Tests
                 "Accuracy cannot be less than zero.");
 
         [Test]
-        public void FindNthRoot_AccuracyMoreThanEpsilon_ThrowArgumentOutOfRangeException()
+        public void FindNthRoot_AccuracyIsMoreThanEpsilon_ThrowArgumentOutOfRangeException()
         {
             NumbersExtension.AppSettings.Epsilon = 0.0001;
             Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRoot(0.01, 2, NumbersExtension.AppSettings.Epsilon + 0.1),
