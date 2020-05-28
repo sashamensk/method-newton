@@ -22,9 +22,9 @@ namespace MethodNewtonTask.Tests
         [TestCase(9876543210, 9, 0.0001, 12.8977)]
         public void FindNthRootTests(double number, int n, double accuracy, double expected)
         {
+            NumbersExtension.AppSettings.Epsilon = accuracy;
             Assert.AreEqual(expected, FindNthRoot(number, n, accuracy), accuracy);
         }
-
 
         [Test]
         public void FindNthRoot_NumberIsNegativeAndDegreeIsEven_ThrowArgumentException() =>
@@ -37,13 +37,23 @@ namespace MethodNewtonTask.Tests
                 "Degree can not be less or equal zero.");
 
         [Test]
-        public void FindNthRoot_AccuracyIsNegative_ThrowArgumentException() =>
-            Assert.Throws<ArgumentException>(() => FindNthRoot(0.01, 2, -1),
-                "Accuracy should be more than zero.");
+        public void FindNthRoot_AccuracyIsLessThanZero_ThrowArgumentOutOfRangeException() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRoot(0.01, 2, -1),
+                "Accuracy cannot be less than zero.");
 
         [Test]
-        public void FindNthRoot_AccuracyMoreThanEpsilon_ThrowArgumentException() =>
-            Assert.Throws<ArgumentException>(() => FindNthRoot(0.01, 2, 0.11),
+        public void FindNthRoot_AccuracyMoreThanEpsilon_ThrowArgumentOutOfRangeException()
+        {
+            NumbersExtension.AppSettings.Epsilon = 0.01;
+            Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRoot(0.01, 2, 0.11),
                 $"Accuracy should be less than {NumbersExtension.AppSettings.Epsilon}");
+        }
+
+        [TestCase(double.NegativeInfinity)]
+        [TestCase(double.PositiveInfinity)]
+        [TestCase(double.NaN)]
+        public void FindNthRoot_NumberIsNotAFiniteValue_ThrowArgumentException(double number) =>
+            Assert.Throws<ArgumentException>(() => FindNthRoot(number, 2, 0.11),
+                $"{nameof(number)} is not a finite value");
     }
 }
