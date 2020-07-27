@@ -7,16 +7,10 @@ namespace MethodNewtonTask
         public static readonly AppSettings AppSettings;
 
         /// <summary>
-        /// Set default value for Epsilon
+        /// Initializes static members of the <see cref="NumbersExtension"/> class.
         /// </summary>
-        static NumbersExtension()
-        {
-            AppSettings = new AppSettings()
-            {
-                Epsilon = 0.1
-            };
-        }
-        
+        static NumbersExtension() => AppSettings = new AppSettings { Epsilon = 0.1 };
+
         /// <summary>
         /// N-th root of number with the given accuracy.
         /// </summary>
