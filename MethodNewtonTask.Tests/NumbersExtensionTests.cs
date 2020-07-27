@@ -2,6 +2,8 @@ using System;
 using NUnit.Framework;
 using static MethodNewtonTask.NumbersExtension;
 
+#pragma warning disable CA1707
+
 namespace MethodNewtonTask.Tests
 {
     [TestFixture]
@@ -28,32 +30,27 @@ namespace MethodNewtonTask.Tests
 
         [Test]
         public void FindNthRoot_NumberIsNegativeAndDegreeIsEven_ThrowArgumentException() =>
-            Assert.Throws<ArgumentException>(() => FindNthRoot(-0.01, 2, 0.0001),
-                "A cannot be negative when when the n degree is even.");
+            Assert.Throws<ArgumentException>(() => FindNthRoot(-0.01, 2, 0.0001), "A cannot be negative when when the n degree is even.");
 
         [Test]
         public void FindNthRoot_DegreeIsNegative_ThrowArgumentException() =>
-            Assert.Throws<ArgumentException>(() => FindNthRoot(0.001, -2, 0.0001),
-                "Degree can not be less or equal zero.");
+            Assert.Throws<ArgumentException>(() => FindNthRoot(0.001, -2, 0.0001), "Degree can not be less or equal zero.");
 
         [Test]
         public void FindNthRoot_AccuracyIsLessThanZero_ThrowArgumentOutOfRangeException() =>
-            Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRoot(0.01, 2, -1),
-                "Accuracy cannot be less than zero.");
+            Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRoot(0.01, 2, -1), "Accuracy cannot be less than zero.");
 
         [Test]
         public void FindNthRoot_AccuracyIsMoreThanEpsilon_ThrowArgumentOutOfRangeException()
         {
             NumbersExtension.AppSettings.Epsilon = 0.0001;
-            Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRoot(0.01, 2, NumbersExtension.AppSettings.Epsilon + 0.1),
-                $"Accuracy should be less than {NumbersExtension.AppSettings.Epsilon}");
+            Assert.Throws<ArgumentOutOfRangeException>(() => FindNthRoot(0.01, 2, NumbersExtension.AppSettings.Epsilon + 0.1), $"Accuracy should be less than {NumbersExtension.AppSettings.Epsilon}");
         }
 
         [TestCase(double.NegativeInfinity)]
         [TestCase(double.PositiveInfinity)]
         [TestCase(double.NaN)]
         public void FindNthRoot_NumberIsNotAFiniteValue_ThrowArgumentException(double number) =>
-            Assert.Throws<ArgumentException>(() => FindNthRoot(number, 2, 0.11),
-                $"{nameof(number)} is not a finite value");
+            Assert.Throws<ArgumentException>(() => FindNthRoot(number, 2, 0.11), $"{nameof(number)} is not a finite value");
     }
 }
