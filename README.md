@@ -4,4 +4,4 @@ Implement an algorithm of the [Newton method](https://en.wikipedia.org/wiki/Nth_
 
 As the found value $`\sqrt[n]{a}`$ use such a value of $`x_k`$ at which $`|x_k-x_{k-1}|<ε`$, $`x_{k} = 1/n((n-1)x_{k-1}+a/x_{k-1}^{n-1}), k=1,2,..., x_0=a`$.   
 
-*Topics -  loops, struct System.Double, equality for System.Double, iterative algorithms.*
+*Topics -  loops with an unknown number of iterations, struct System.Double, equality for System.Double, iterative algorithms.*
