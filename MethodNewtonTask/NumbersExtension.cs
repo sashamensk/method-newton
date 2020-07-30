@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MethodNewtonTask
 {
@@ -12,21 +12,24 @@ namespace MethodNewtonTask
         static NumbersExtension() => AppSettings = new AppSettings { Epsilon = 0.1 };
 
         /// <summary>
-        /// N-th root of number with the given accuracy.
+        /// Find n-th root of number with the given accuracy.
         /// </summary>
         /// <param name="number">Source number.</param>
         /// <param name="degree">Root degree.</param>
         /// <param name="accuracy">Accuracy value.</param>
-        /// <returns> N-th root of number.</returns>
+        /// <returns> n-th root of number.</returns>
         /// <exception cref="ArgumentException">
         /// Thrown when number is negative and n degree is even.
-        /// -or- degree is more than or equal to zero.
-        /// -or- accuracy is less than zero.
-        /// -or- accuracy is more than Epsilon .
+        /// -or- 
+        /// degree is more than or equal to zero.
+        /// -or- 
+        /// accuracy is less than zero.
+        /// -or- 
+        /// accuracy is more than Epsilon.
         /// </exception>
         public static double FindNthRoot(double number, int degree, double accuracy)
         {
-            throw new NotImplementedException("You need to implement this function.");
+            throw new NotImplementedException("You need to implement this method.");
         }
     }
 }
