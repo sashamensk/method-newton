@@ -21,11 +21,11 @@ namespace MethodNewtonTask
         /// <exception cref="ArgumentException">
         /// Thrown when number is negative and n degree is even.
         /// -or- 
-        /// degree is more than or equal to zero.
+        /// degree is less than or equal to zero.
         /// -or- 
         /// accuracy is less than zero.
         /// -or- 
-        /// accuracy is more than Epsilon.
+        /// accuracy is more than `Epsilon`.
         /// </exception>
         public static double FindNthRoot(double number, int degree, double accuracy)
         {
