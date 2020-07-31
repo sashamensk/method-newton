@@ -51,6 +51,6 @@ namespace MethodNewtonTask.Tests
         [TestCase(double.PositiveInfinity)]
         [TestCase(double.NaN)]
         public void FindNthRoot_NumberIsNotAFiniteValue_ThrowArgumentException(double number) =>
-            Assert.Throws<ArgumentException>(() => FindNthRoot(number, 2, 0.11), $"{nameof(number)} is not a finite value");
+            Assert.Throws<ArgumentException>(() => FindNthRoot(number, 2, 0.0001), $"{nameof(number)} is not a finite value");
     }
 }
