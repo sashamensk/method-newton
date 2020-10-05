@@ -1,5 +1,7 @@
 using System;
 
+#pragma warning disable CA1707
+
 namespace MethodNewtonTask
 {
     public static class NumbersExtension
