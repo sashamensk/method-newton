@@ -9,7 +9,7 @@ namespace MethodNewtonTask
         /// <summary>
         /// Initializes static members of the <see cref="NumbersExtension"/> class.
         /// </summary>
-        static NumbersExtension() => AppSettings = new AppSettings { Epsilon = 0.1 };
+        static NumbersExtension() => AppSettings = new AppSettings { Epsilon = double.Epsilon };
 
         /// <summary>
         /// Find n-th root of number with the given accuracy.
