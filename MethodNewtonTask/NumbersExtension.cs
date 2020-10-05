@@ -6,12 +6,10 @@ namespace MethodNewtonTask
 {
     public static class NumbersExtension
     {
-        public static readonly AppSettings AppSettings;
-
         /// <summary>
         /// Initializes static members of the <see cref="NumbersExtension"/> class.
         /// </summary>
-        static NumbersExtension() => AppSettings = new AppSettings { Epsilon = double.Epsilon };
+        public static readonly AppSettings AppSettings = new AppSettings { Epsilon = double.Epsilon };
 
         /// <summary>
         /// Find n-th root of number with the given accuracy.
