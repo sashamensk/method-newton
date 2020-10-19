@@ -19,9 +19,12 @@ namespace MethodNewtonTask
         /// <exception cref="ArgumentException">
         /// Thrown when number is negative and n degree is even.
         /// -or- 
-        /// degree is less than or equal to zero.
-        /// -or- 
-        /// accuracy is less than zero.
+        /// degree is less than zero
+        /// -or-
+        /// number is NaN, double.NegativeInfinity, double.NegativeInfinity.
+        /// </exception>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// Thrown when accuracy is less than zero.
         /// -or- 
         /// accuracy is more than `Epsilon`.
         /// </exception>
