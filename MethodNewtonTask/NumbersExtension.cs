@@ -21,7 +21,7 @@ namespace MethodNewtonTask
         /// -or- 
         /// degree is less than zero
         /// -or-
-        /// number is NaN, double.NegativeInfinity, double.NegativeInfinity.
+        /// number is NaN, double.NegativeInfinity, double.PositiveInfinity.
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException">
         /// Thrown when accuracy is less than zero.
