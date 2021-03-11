@@ -56,7 +56,7 @@ namespace MethodNewtonTask
             double nnthRoot = 0.0;
             while (intMax > accuracy)
             {
-                nnthRoot = (((degree - 1.0) * temp) + ((double)number / Math.Pow(temp, degree - 1))) / (double)degree;
+                nnthRoot = (((degree - 1.0) * temp) + (number / Math.Pow(temp, degree - 1))) / (double)degree;
                 intMax = Math.Abs(nnthRoot - temp);
                 temp = nnthRoot;
             }
